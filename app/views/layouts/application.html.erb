@@ -1,14 +1,79 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>UnitedWay</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+ <!-- HTML5 Boilerplate -->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+</script>
+<![endif]-->
+  
+  
+  
+  
+  <head>
+    <title>Northfield Area United Way</title>
+       <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>    
 
-<%= yield %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    
+  	<meta name="description" content="DESCRIPTION GOES HERE">
+  	<meta name="keywords" content="KEYWORDS GO HERE">
 
-</body>
+  	<meta http-equiv="cleartype" content="on">
+  	
+  		<!-- Responsive and mobile friendly stuff -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+
+  </head>
+  
+  <body>
+    <header>
+      <div id="top_bar">
+        <%= image_tag("logo_edited.png", alt: "Logo", id: "logo") %>
+        <!--<img id="logo" src="logo_edited.png" alt="Logo">-->
+        <div id="title">Northfield Area United Way</div>
+         <div class="mobile" id="wrapped_title">
+            Northfield Area<br>
+            United Way
+         </div>
+         
+         <div id="tabs">
+            <a href="#" id="volunteer_tab">Volunteer</a>
+            <a href="#" id="donate_tab">Donate</a>
+         </div>
+      </div>
+      
+      <%= image_tag("softball_cropped.png", alt: "softball_player", id: "header_pic") %>
+      <!--<img id="header_pic" src="softball_cropped.png"> -->
+      <nav>
+         <div class="wrapper">
+               <ul>
+                  <li><a id="home_link" href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Why Give</a></li>
+                  <li><a href="#">Apply For a Grant</a></li>
+                  <li><a href="#">Partner Agencies</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a id="mobile_donate_button" href="#">Donate</a></li>
+                  <li><a id="mobile_volunteer_button" href="#">Volunteer</a></li>
+               </ul>
+          </div>
+       <nav>
+ 
+      <div style="clear: both;"></div>
+    </header>
+    
+      <%= yield %>
+  
+  </body>
 </html>
