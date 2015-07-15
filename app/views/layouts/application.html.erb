@@ -40,41 +40,30 @@
     <header>
       <div id="top_bar">
         <%= image_tag("logo_edited.png", alt: "Logo", id: "logo") %>
-        <!--<img id="logo" src="logo_edited.png" alt="Logo">-->
-        <div id="title">Northfield Area United Way</div>
+        <!--<div id="title">Northfield Area United Way</div>-->
+        <h1 id="title">Northfield Area United Way</h1>
          <div class="mobile" id="wrapped_title">
             Northfield Area<br>
             United Way
          </div>
          
          <div id="tabs">
-            <!--<a href="#" id="volunteer_tab">Volunteer</a>-->
             <%= link_to "Volunteer", root_path, id: "volunteer_tab" %>
-            <!--<a href="#" id="donate_tab">Donate</a>-->
             <%= link_to "Donate", root_path, id: "donate_tab" %>
          </div>
       </div>
       
       <%= image_tag("softball_cropped.png", alt: "softball_player", id: "header_pic") %>
-      <!--<img id="header_pic" src="softball_cropped.png"> -->
       <nav>
          <div class="wrapper">
                <ul>
-                  <!--<li><a id="home_link" href="#">Home</a></li>-->
                   <li><%= link_to "Home", root_path, id: "home_link" %></li>
-                  <!--<li><a href="#">About</a></li>-->
                   <li><%= link_to "About", root_path %></li>
-                  <!--<li><a href="#">Why Give</a></li>-->
                   <li><%= link_to "Why Give", root_path %></li>
-                  <!--<li><a href="#">Apply For a Grant</a></li>-->
                   <li><%= link_to "Apply For a Grant", root_path %></li>
-                  <!--<li><a href="#">Partner Agencies</a></li>-->
                   <li><%= link_to "Partner Agencies", root_path %></li>
-                  <!--<li><a href="#">Contact</a></li>-->
                   <li><%= link_to "Contact", root_path %></li>
-                  <!--<li><a id="mobile_donate_button" href="#">Donate</a></li>-->
                   <li><%= link_to "Donate", root_path, id: "mobile_donate_button" %></li>
-                  <!--<li><a id="mobile_volunteer_button" href="#">Volunteer</a></li>-->
                   <li><%= link_to "Volunteer", root_path, id: "mobile_volunteer_button" %></li>
                </ul>
           </div>
@@ -84,6 +73,16 @@
     </header>
     
       <%= yield %>
+      
+    <footer>
+      <%= link_to "New Post", new_post_path %>
+    </footer>
+        
+     
   
   </body>
+  
+
+  
+  
 </html>

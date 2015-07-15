@@ -8,141 +8,45 @@
   <!--</div>-->
 <%# end %>
 
-
 <div class="wrapper">
-  <div class="section group">
-     <div class="col span_1_of_2">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
-     </div>
-     
-      <div class="col span_1_of_2">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
-     </div>
-  </div>
-  
-  <div class="section group">
+
+  <div class="section group"> <!-- row 1 -->
+    <div class="col span_1_of_3">
+      <div class="sub_heading">
+        <h3>News</h3>
+      </div>
+    </div>
+    
+    <div class="col span_1_of_3">
+      <div class="sub_heading">
+        <h3>Features</h3>
+      </div>
+    </div>
+    
+    <div class="col span_1_of_3">
+      <div class="sub_heading">
+        <h3>Calendar</h3>
+      </div>
+    </div>
+  </div> <!--end of row 1 -->
+
+
+
+
+
+  <% @posts.each do |post| %>
+    <div class="section group">
+
      <div class="col span_1_of_3">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
+       <h2><%= link_to post.title, post %></h2><br>
+       <p><%= post.created_at.strftime("%B, %d, %Y") %></p><br>
+       <p><%= post.body %></p>
      </div>
-     
-      <div class="col span_1_of_3">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
-     </div>
-     
-      <div class="col span_1_of_3">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
-     </div>
-  </div>
+       </div>   
+
+  <% end %>
   
-        <div class="section group">
-     <div class="col span_1_of_3">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
-     </div>
-     
-      <div class="col span_1_of_3">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
-     </div>
-     
-      <div class="col span_1_of_3">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
-     </div>
-  </div>
   
-        <div class="section group">
-     <div class="col span_1_of_3">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
-     </div>
-     
-      <div class="col span_1_of_3">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
-     </div>
-     
-      <div class="col span_1_of_3">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
-     </div>
-  </div>
   
-        <div class="section group">
-     <div class="col span_1_of_3">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
-     </div>
-     
-      <div class="col span_1_of_3">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
-     </div>
-     
-      <div class="col span_1_of_3">
-        <p>Blue Bottle deep v meh, quinoa asymmetrical photo booth 3 wolf moon paleo hoodie pour-over whatever. 
-        Meh Wes Anderson Pinterest fingerstache, XOXO lumbersexual listicle slow-carb cred actually. Odd Future 
-        whatever meggings, Helvetica Shoreditch farm-to-table Blue Bottle fixie sartorial cornhole cred normcore 
-        fap. Kickstarter jean shorts listicle selfies Blue Bottle, seitan XOXO church-key art party. Kale chips 
-        deep v cray, slow-carb ethical tofu cardigan sriracha swag. Keytar lomo kale chips PBR shabby chic. Shabby 
-        chic kale chips master cleanse street art.
-     </div>
-  </div>
-</div> <!--end of wrapper-->
+  
+</div> <!-- end of wrapper -->
