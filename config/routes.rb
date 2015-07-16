@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   end
   
   root "posts#index"
+  get 'about' => 'pages#about'
+  get 'contact' => 'pages#contact'
+  get 'admin' => 'pages#admin'
   
 end

@@ -1,0 +1,13 @@
+<h1>Admin Page</h1>
+
+<% @posts.each do |post| %>
+    <div class="section group">
+
+     <div class="col span_1_of_3">
+       <h2><%= link_to post.title, post %></h2><br>
+       <p><%= post.created_at.strftime("%B, %d, %Y") %></p><br>
+       <p><%= post.body %></p>
+     </div>
+       </div>   
+
+<% end %>
