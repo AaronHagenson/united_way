@@ -5,7 +5,7 @@
   <%= blog_comment.body %>
 </p>
 <p>
-  <%= time_ago_in_words(blog_comment.created_at) %> Ago
+  <%= time_ago_in_words(blog_comment.created_at) %> ago
 </p>
 <%= link_to "Delete Comment", [blog_comment.post, blog_comment],
               method: :delete, class: "button", data: { confirm: 'Are you sure?' } %>

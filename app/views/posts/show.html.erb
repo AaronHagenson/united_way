@@ -8,7 +8,7 @@
   <%= @post.body %>
 </p>
 
-<h2><%= @post.blog_comments.count %> Comments</h2>
+<h2><%=pluralize( @post.blog_comments.count, 'Comment') %></h2>
   <%= render @post.blog_comments %>
   
 <h3>Add a comment</h3>
