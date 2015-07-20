@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :blog_posts       
-  has_many :blog_comments
+  has_many :posts       
+  has_many :forum_comments
+  has_many :forum_posts
 end
