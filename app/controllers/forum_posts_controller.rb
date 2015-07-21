@@ -24,6 +24,24 @@ class ForumPostsController < ApplicationController
     @post = ForumPost.find(params[:id])
   end
   
+  def edit
+    @post = ForumPost.find(params[:id])
+  end
+  
+  def update 
+    if @post.update(forum_post_params)
+      redirect_to @post
+    else
+      render 'edit'
+    end
+  end
+  
+  def destroy
+    @post.destroy
+    redirect_to root_path
+  end
+
+  
   
   private
   

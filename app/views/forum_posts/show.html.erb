@@ -1,2 +1,4 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.content %></p>
+<%= link_to "Edit", edit_forum_post_path %>
+<%= link_to "Delete", @post, method: :delete, data: {confirm: "Are you sure?" } %>
