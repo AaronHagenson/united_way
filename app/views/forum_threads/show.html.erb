@@ -1,0 +1,13 @@
+<h1><%= @thread.title %></h1>
+<p><%= @thread.content %></p>
+
+<%= link_to "Edit", edit_forum_thread_path %>
+<%= link_to "Delete", @thread, method: :delete, data: {confirm: "Are you sure?" } %>
+
+<br><br>
+
+<h2><%= @thread.forum_comments.count %> Comments</h2>
+<%= render @thread.forum_comments %>
+
+<p>Reply to Thread</p>
+<%= render 'forum_comments/form' %>

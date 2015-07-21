@@ -1,7 +1,0 @@
-<h1>Welcome to the Forum Page</h1>
-
-<% @posts.each do |post| %>
-  <h2><%= link_to post.title, post %></h2>
-  <p>Published at <%= post.created_at %> by <%= post.user.email %></p>
-<% end %>
-<%= link_to "New Post", new_forum_post_path %>

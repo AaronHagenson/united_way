@@ -1,0 +1,7 @@
+<h1>Welcome to the Forum Page</h1>
+
+<% @threads.each do |thread| %>
+  <h2><%= link_to thread.title, thread %></h2>
+  <p>Published at <%= thread.created_at %> by <%= thread.user.email %></p>
+<% end %>
+<%= link_to "New Thread", new_forum_thread_path %>

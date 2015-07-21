@@ -1,0 +1,12 @@
+<%= form_for([@thread, @thread.forum_comments.build]) do |f| %>
+
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+  
+  <p>
+    <%= f.submit "Create Comment" %>
+  </p>
+  
+<% end %>

@@ -1,11 +1,11 @@
-<h1>Edit Forum Post</h1>
-<%= form_for @post do |f| %>
-  <% if @post.errors.any? %>
+<h1>New Forum Thread</h1>
+<%= form_for @thread do |f| %>
+  <% if @thread.errors.any? %>
     <div id="errors">
-      <h2><%= pluralize(@post.errors.count, "error") %> prevented this
+      <h2><%= pluralize(@thread.errors.count, "error") %> prevented this
       post from saving</h2>
       <ul>
-        <% @post.errors.full_messages.each do |msg| %>
+        <% @thread.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -24,8 +24,7 @@
   </p>
   
   <p>
-    <%= f.submit %>
+    <%= f.submit "Create Thread" %>
   </p>
-  <%= link_to "Cancel", forum_post_path %>
   
 <% end %>

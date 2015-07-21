@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :posts
-  resources :forum_posts do 
+  resources :forum_threads do 
     resources :forum_comments
   end
 
