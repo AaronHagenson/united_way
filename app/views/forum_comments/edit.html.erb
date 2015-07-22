@@ -1,0 +1,13 @@
+<h1>Edit Reply</h1>
+<%= form_for ([@thread, @comment]) do |f| %>
+
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+  
+  <p>
+    <%= f.submit "Edit Comment" %>
+  </p>
+  
+<% end %>

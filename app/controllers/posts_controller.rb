@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  
+  before_action :is_admin?, only: [:update, :destroy]
+
   def index
      @posts = Post.all.order('created_at DESC')
   end
@@ -44,15 +45,16 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
   
-
-  
-  
-
-  
   private
   
   def post_params
     params.require(:post).permit(:title, :body)
   end
+  
+  def is_admin?
+    @post = Post.find(params[:id])
+    redirect_to root_path unless current_user.admin?
+  end
+
   
 end

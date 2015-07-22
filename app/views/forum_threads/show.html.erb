@@ -1,8 +1,10 @@
 <h1><%= @thread.title %></h1>
 <p><%= @thread.content %></p>
 
-<%= link_to "Edit", edit_forum_thread_path %>
-<%= link_to "Delete", @thread, method: :delete, data: {confirm: "Are you sure?" } %>
+<% if !current_user.nil? && (current_user.id == @thread.user_id || current_user.admin?) %>
+  <%= link_to "Edit", edit_forum_thread_path %>
+  <%= link_to "Delete", @thread, method: :delete, data: {confirm: "Are you sure?" } %>
+<% end %>
 
 <br><br>
 

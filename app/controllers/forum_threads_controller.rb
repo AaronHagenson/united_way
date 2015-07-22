@@ -1,6 +1,8 @@
 class ForumThreadsController < ApplicationController
   before_action :find_forum_thread, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :allow_update_destroy?, only: [:update, :destroy]
+
   
   def index
     @threads = ForumThread.all.order("created_at DESC")
@@ -21,7 +23,7 @@ class ForumThreadsController < ApplicationController
   end
     
   def show
-    @thread = ForumThread.find(params[:id])
+    @thread = ForumThread.find(params[:id]) 
   end
   
   def edit
@@ -52,5 +54,11 @@ class ForumThreadsController < ApplicationController
   def find_forum_thread
     @thread = ForumThread.find(params[:id])
   end
+  
+  def allow_update_destroy?
+    find_forum_thread
+    redirect_to root_path unless current_user.admin? || current_user.id == @thread.user_id
+  end
+
   
 end

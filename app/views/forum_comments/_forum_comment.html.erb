@@ -1,3 +1,12 @@
 <p><%= forum_comment.body %></p>
 <p><%= forum_comment.user.email %></p>
+
+<% if !current_user.nil? && (current_user.id == forum_comment.user_id || current_user.admin?) %>
+  
+  <%= link_to "Edit", edit_forum_thread_forum_comment_path(forum_comment.forum_thread, forum_comment) %> 
+  <%= link_to "Delete", [forum_comment.forum_thread, forum_comment], method: :delete,
+                            data: { confirm: "Are you sure?" } %>
+                            
+<% end %>
+                           
 <br><br>
