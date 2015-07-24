@@ -1,12 +1,4 @@
-<!--<h1>Index Page</h1>-->
-<%#= link_to "New", new_post_path %>
 
-<%# @posts.each do |post| %>
-  <!--<div class="post_wrapper">-->
-  <!--  <h2><#%= link_to post.title, post %></h2>-->
-  <!--  <p><#%= post.created_at.strftime("%B, %d, %Y") %></p>-->
-  <!--</div>-->
-<%# end %>
 
 <div class="wrapper">
 
@@ -40,7 +32,7 @@
      <div class="col span_1_of_3">
        <h2><%= link_to post.title, post %></h2><br>
        <p><%= post.created_at.strftime("%B, %d, %Y") %></p><br>
-       <p><%= post.body %></p>
+       <p><%= post.body.html_safe %></p>
      </div>
        </div>   
 

@@ -7,7 +7,7 @@
      <div class="col span_1_of_3">
        <h2><%= link_to post.title, post %></h2><br>
        <p><%= post.created_at.strftime("%B, %d, %Y") %></p><br>
-       <p><%= post.body %></p>
+       <p><%= post.body.html_safe %></p>
        <p>
           <%= link_to 'Edit', edit_post_path(post) %>
           <%= link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure" } %>

@@ -1,29 +1,33 @@
-<%= form_for @post do |f| %>
-  <% if @post.errors.any? %>
-    <div id="errors">
-      <h2><%= pluralize(@post.errors.count, "error") %> prevented this
-      post from saving</h2>
-      <ul>
-        <% @post.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+<div class="form_wrapper">
+  <div class="wrapper">
+    <%= form_for @post do |f| %>
+      <% if @post.errors.any? %>
+        <div id="errors">
+          <h2><%= pluralize(@post.errors.count, "error") %> prevented this
+          post from saving</h2>
+          <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
   
-  
-  <% end %>
-  <p>
-    <%= f.label :title %> 
-    <%= f.text_field :title %>
-  </p>
-  
-  <p>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </p>
-  
-  <p>
-    <%= f.submit %>
-  </p>
-  
-<% end %>
+      <p>
+        <%= f.label :title %> 
+        <%= f.text_field :title %>
+      </p>
+      <br><br>
+      
+      <p>
+        <%= f.label :body %>
+        <%= f.text_area :body, :class => "tinymce", :rows => 40 %>
+        <%= tinymce %>
+      </p>
+      
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+  </div>
+</div>
