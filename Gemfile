@@ -7,8 +7,11 @@ gem 'coffee-rails', '4.1.0'
 gem 'jquery-rails', '4.0.3'
 gem 'turbolinks',   '2.3.0'
 gem 'jbuilder',     '2.2.3'
-gem 'devise', '~> 3.5.1'
+gem 'devise',     '~>3.5.1'
 gem 'tinymce-rails'
+gem 'carrierwave',  '0.10.0'
+gem 'mini_magick',  '3.8.0'
+gem 'fog',          '1.23.0'
 gem 'sdoc',         '0.4.0', group: :doc
 
 group :development, :test do

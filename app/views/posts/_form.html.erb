@@ -1,6 +1,6 @@
 <div class="form_wrapper">
   <div class="wrapper">
-    <%= form_for @post do |f| %>
+    <%= form_for(@post, html: { multipart: true }) do |f| %>
       <% if @post.errors.any? %>
         <div id="errors">
           <h2><%= pluralize(@post.errors.count, "error") %> prevented this
@@ -28,6 +28,9 @@
       <p>
         <%= f.submit %>
       </p>
+      <%= f.file_field :picture %>
     <% end %>
   </div>
 </div>
+
+
