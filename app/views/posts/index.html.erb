@@ -1,6 +1,6 @@
 
 
-<div class="wrapper">
+<div class="large_wrapper">
 
   <div class="section group"> <!-- row 1 -->
     <div class="col span_1_of_3">
@@ -28,13 +28,18 @@
 
   <% @posts.each do |post| %>
     <div class="section group">
-
-     <div class="col span_1_of_3">
-       <h2><%= link_to post.title, post %></h2><br>
-       <p><%= post.created_at.strftime("%B, %d, %Y") %></p><br>
-       <p><%= post.body.html_safe %></p>
-     </div>
-       </div>   
+      <div class="col span_1_of_3">
+        <div class="post_tile">
+          <h2><%= link_to post.title, post %></h2><br>
+          <% if post.picture? %>
+            <%=link_to image_tag(post.picture.url), post %>
+          <% else %>
+            <%= link_to image_tag("defaultlogo.png"), post %>
+          <% end %>
+          <p><%= post.summary %></p>
+        </div>
+      </div>
+    </div>   
 
   <% end %>
   

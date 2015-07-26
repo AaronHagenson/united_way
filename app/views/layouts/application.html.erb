@@ -40,34 +40,52 @@
     <header>
       <div id="top_bar">
         <%= image_tag("logo_edited.png", alt: "Logo", id: "logo") %>
-        <!--<div id="title">Northfield Area United Way</div>-->
         <h1 id="title">Northfield Area United Way</h1>
-         <div class="mobile" id="wrapped_title">
-            Northfield Area<br>
-            United Way
+          <div class="mobile" id="wrapped_title">
+             Northfield Area<br>
+             United Way
+          </div>
+         
+          <div id="login_links">
+            <% if !user_signed_in? %>
+              <%= link_to "Log In", new_user_session_path %>
+              <%= link_to "Sign Up", new_user_registration_path %>
+            <% end %>
+        
+            <% if user_signed_in? %>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+              <%= link_to "Profile", edit_user_registration_path %>
+            <% end %>
          </div>
+
          
          <div id="tabs">
             <%= link_to "Volunteer", root_path, id: "volunteer_tab" %>
             <%= link_to "Donate", root_path, id: "donate_tab" %>
          </div>
+         
+         
       </div>
       
       <%= image_tag("softball_cropped.png", alt: "softball_player", id: "header_pic") %>
       <nav>
-         <div class="wrapper">
-               <ul>
-                  <li><%= link_to "Home", root_path, id: "home_link" %></li>
-                  <li><%= link_to "About", about_path %></li>
-                  <li><%= link_to "Why Give", root_path %></li>
-                  <li><%= link_to "Apply For a Grant", root_path %></li>
-                  <li><%= link_to "Partner Agencies", root_path %></li>
-                  <li><%= link_to "Forum", forum_threads_path %></li>
-                  <li><%= link_to "Contact", root_path %></li>
-                  <li><%= link_to "Donate", root_path, id: "mobile_donate_button" %></li>
-                  <li><%= link_to "Volunteer", root_path, id: "mobile_volunteer_button" %></li>
-               </ul>
-          </div>
+         <div class="large_wrapper">
+           <ul>
+              <li><%= link_to "Home", root_path, id: "home_link" %></li>
+              <li><%= link_to "About", about_path %></li>
+              <li><%= link_to "Why Give", root_path %></li>
+              <li><%= link_to "Apply For a Grant", root_path %></li>
+              <li><%= link_to "Partner Agencies", root_path %></li>
+              <li><%= link_to "Forum", forum_threads_path %></li>
+              <li><%= link_to "Contact", root_path %></li>
+              <li><%= link_to "Donate", root_path, id: "mobile_donate_button" %></li>
+              <li><%= link_to "Volunteer", root_path, id: "mobile_volunteer_button" %></li>
+              <% if user_is_admin? %>
+                <li><%= link_to "Admin", admin_path %></li>
+             <% end %>
+
+           </ul>
+        </div>
        <nav>
  
       <div style="clear: both;"></div>
@@ -79,28 +97,5 @@
     
       <%= yield %>
       
-    <footer>
-      <% if !user_signed_in? %>
-        <%= link_to "Log In", new_user_session_path %>
-        <%= link_to "Sign Up", new_user_registration_path %>
-      <% end %>
-      
-      <% if user_signed_in? %>
-        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-        <%= link_to "Edit Profile", edit_user_registration_path %>
-      <% end %>
-      
-      <% if user_is_admin? %>
-        <%= link_to "Admin", admin_path %>
-      <% end %>
-      
-    </footer>
-        
-     
-  
   </body>
-  
-
-  
-  
 </html>

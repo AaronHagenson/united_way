@@ -20,6 +20,11 @@
       <br><br>
       
       <p>
+        <%= f.label :summary %>
+        <%= f.text_area :summary %>
+      </p>
+      
+      <p>
         <%= f.label :body %>
         <%= f.text_area :body, :class => "tinymce", :rows => 40 %>
         <%= tinymce %>

@@ -33,21 +33,57 @@ h3 {
   
 }
  
-.wrapper{
+.large_wrapper{
    width: 95%;
    margin: auto;
 }
 
-.form_wrapper {
+
+.small_wrapper {
   width: 70%;
   margin: auto;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
 
-// .h_line {
-//   background-color: $red;
-//   height: 1px;
-// }
+/* index page */
+.post_tile { text-align: center; 
+    border: 1px solid black;
+    h2 {
+    text-align: center; 
+    background-color: $blue;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: -16px;
+    }
+    a {
+    color: white;
+    text-decoration: none;
+        &:hover {
+        color: $lightblue;
+        }
+    }
+    p {
+       background-color: $blue;
+       color: white;
+       padding: 10px;
+       margin-top: -2px;
+    }
+    img {
+        width: 100%;
+    }
+}
 
+/* show page */
+.post_picture {
+  text-align: center;
+}
+
+.posted_on {
+  margin-top: 20px;
+  float: right;
+}
 
 
 
@@ -63,6 +99,25 @@ header {
    margin: 6px 6px 0px 0px;
    width: 15%;
    float: left;
+}
+
+#title {
+ float: left;
+}
+
+#login_links {
+ float: left;
+ margin-left: 30%;
+ margin-top: 60px;
+ a {
+   color: $blue;
+   text-decoration: none;
+   font-weight: bold;
+   padding-right: 20px;
+   &:hover {
+   color: $lightblue;
+   }
+  }
 }
 
 
@@ -176,7 +231,14 @@ nav {
 
 
 /* Media Queries */
-@media only screen and (max-width: 1450px) {
+@media only screen and (max-width: 1720px) {
+  #login_links {
+    margin-left: 25%;
+  }
+}
+
+
+@media only screen and (max-width: 1500px) {
 
 #title {
    font-size: 2.5em;
@@ -184,7 +246,7 @@ nav {
 }
 
 a:link, a:focus {
-   font-size: 1.5em;
+   //font-size: 1.5em;
 }
 
 #donate_tab, #volunteer_tab {
@@ -206,7 +268,7 @@ nav li {
 }
 
 a:link, a:focus {
-   font-size: 1em;
+   //font-size: 1em;
 }
 
 }
@@ -251,7 +313,7 @@ a:link, a:focus {
 
 a:link, a:focus {
    padding: 10px;
-   font-size: 1em;
+   //font-size: 1em;
 }
 }
 
@@ -259,7 +321,7 @@ a:link, a:focus {
 
 a:link, a:focus {
    padding: 10px;
-   font-size: .75em;
+   //font-size: .75em;
    letter-spacing: 1px; 
   
 }
