@@ -9,41 +9,118 @@
       </div>
     </div>
     
-    <div class="col span_1_of_3">
-      <div class="sub_heading">
-        <h3>Features</h3>
-      </div>
-    </div>
+    <!--<div class="col span_1_of_3">-->
+    <!--  <div class="sub_heading">-->
+    <!--    <h3>Features</h3>-->
+    <!--  </div>-->
+    <!--</div>-->
     
-    <div class="col span_1_of_3">
-      <div class="sub_heading">
-        <h3>Calendar</h3>
-      </div>
-    </div>
-  </div> <!--end of row 1 -->
+    <!--<div class="col span_1_of_3">-->
+    <!--  <div class="sub_heading">-->
+    <!--    <h3>Calendar</h3>-->
+    <!--  </div>-->
+    <!--</div>-->
+  <!--</div> -->
 
 
 
 
 
-  <% @posts.each do |post| %>
-    <div class="section group">
-      <div class="col span_1_of_3">
-        <div class="post_tile">
-          <h2><%= link_to post.title, post %></h2><br>
-          <% if post.picture? %>
-            <%=link_to image_tag(post.picture.url), post %>
-          <% else %>
-            <%= link_to image_tag("defaultlogo.png"), post %>
-          <% end %>
-          <p><%= post.summary %></p>
+  <%# @posts.each do |post| %>
+    <!--<div class="section group">-->
+    <!--  <div class="col span_1_of_3">-->
+        <!--<div class="post_tile">-->
+          <!--<h2><%#= link_to post.title, post %></h2><br>
+          <%# if post.picture? %>
+            <%#=link_to image_tag(post.picture.url), post %>
+          <%# else %>
+            <%#= link_to image_tag("defaultlogo.png"), post %>
+          <%# end %>
+          <p><%#= post.summary %></p>
         </div>
       </div>
     </div>   
 
-  <% end %>
+  <%# end %> -->
+  
+  <div class="section group"> <!-- first row of posts -->
+    <div class="col span_1_of_3">
+      <div class="post_tile">
+        <h2><%= link_to @post1.title, @post1 %></h2><br>
+         <% if @post1.picture? %>
+            <%=link_to image_tag(@post1.picture.url), @post1 %>
+          <% else %>
+            <%= link_to image_tag("defaultlogo.png"), @post1 %>
+          <% end %>
+          <p><%= @post1.summary %></p>
+      </div>
+    </div>
+
+  
+    <div class="col span_1_of_3">
+      <div class="post_tile">
+        <h2><%= link_to @post2.title, @post2 %></h2><br>
+         <% if @post2.picture? %>
+            <%=link_to image_tag(@post2.picture.url), @post2 %>
+          <% else %>
+            <%= link_to image_tag("defaultlogo.png"), @post2 %>
+          <% end %>
+          <p><%= @post2.summary %></p>
+      </div>
+    </div>
+    
+    <div class="col span_1_of_3">
+      <div class="post_tile">
+        <h2><%= link_to @post3.title, @post3 %></h2><br>
+         <% if @post3.picture? %>
+            <%=link_to image_tag(@post3.picture.url), @post3 %>
+          <% else %>
+            <%= link_to image_tag("defaultlogo.png"), @post3 %>
+          <% end %>
+          <p><%= @post3.summary %></p>
+      </div>
+    </div>
+  </div> <!-- end of first row of posts -->
+  
+  <div class="section group"> <!-- second row of posts -->
+    <div class="col span_1_of_3">
+      <div class="post_tile">
+        <h2><%= link_to @post4.title, @post4 %></h2><br>
+         <% if @post4.picture? %>
+            <%=link_to image_tag(@post4.picture.url), @post4 %>
+          <% else %>
+            <%= link_to image_tag("defaultlogo.png"), @post4 %>
+          <% end %>
+          <p><%= @post4.summary %></p>
+      </div>
+    </div>
+
+  
+    <div class="col span_1_of_3">
+      <div class="post_tile">
+        <h2><%= link_to @post5.title, @post5 %></h2><br>
+         <% if @post5.picture? %>
+            <%=link_to image_tag(@post5.picture.url), @post5 %>
+          <% else %>
+            <%= link_to image_tag("defaultlogo.png"), @post5 %>
+          <% end %>
+          <p><%= @post5.summary %></p>
+      </div>
+    </div>
+    
+    <div class="col span_1_of_3">
+      <div class="post_tile">
+        <h2><%= link_to @post6.title, @post6 %></h2><br>
+         <% if @post6.picture? %>
+            <%=link_to image_tag(@post6.picture.url), @post6 %>
+          <% else %>
+            <%= link_to image_tag("defaultlogo.png"), @post6 %>
+          <% end %>
+          <p><%= @post6.summary %></p>
+      </div>
+    </div>
+  </div> <!-- end of second row of posts -->
   
   
-  
-  
+
 </div> <!-- end of wrapper -->

@@ -4,6 +4,12 @@ class PostsController < ApplicationController
 
   def index
      @posts = Post.all.order('created_at DESC')
+     @post1 = @posts[0]
+     @post2 = @posts[1]
+     @post3 = @posts[2]
+     @post4 = @posts[3]
+     @post5 = @posts[4]
+     @post6 = @posts[5]
   end
   
   def new
