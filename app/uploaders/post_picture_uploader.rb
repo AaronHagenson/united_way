@@ -5,7 +5,7 @@ class PostPictureUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
    include CarrierWave::MiniMagick
-   process resize_to_limit: [500, 500]
+   #process resize_to_limit: [500, 500]
    
    if Rails.env.production?
      storage :fog
@@ -39,6 +39,25 @@ class PostPictureUploader < CarrierWave::Uploader::Base
   # version :thumb do
   #   process :resize_to_fit => [50, 50]
   # end
+    version :large do
+      process :crop
+      process :resize_to_fill => [640, 480]
+    end
+    
+    def crop
+      if model.crop_x.present?
+        resize_to_limit(640, 480)
+        manipulate! do |img|
+          x = model.crop_x.to_i
+          y = model.crop_y.to_i
+          w = model.crop_w.to_i
+          h = model.crop_h.to_i
+          img.crop("#{w}x#{h}+#{x}+#{y}")
+          img
+        end
+      end
+    end
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

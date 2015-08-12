@@ -1,7 +1,7 @@
 <div class="small_wrapper">
   <h1> <%= @post.title %> </h1>
   <div class="post_picture">
-    <%= image_tag @post.picture.url if @post.picture? %>
+    <%= image_tag @post.picture.url(:large) if @post.picture? %>
   </div>
   <p>
     <%= @post.body.html_safe %>

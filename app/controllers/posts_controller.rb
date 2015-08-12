@@ -20,7 +20,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     
     if @post.save
-      redirect_to @post
+      if params[:post][:picture].present?
+        render :crop
+      else
+        redirect_to @post
+      end
     else 
       render 'new'
     end
@@ -37,8 +41,12 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     
-    if @post.update(params[:post].permit(:title, :body, :summary, :picture))
-      redirect_to @post
+    if @post.update(params[:post].permit(:title, :body, :summary, :picture, :crop_x, :crop_y, :crop_w, :crop_h))
+      if params[:post][:picture].present?
+        render :crop
+      else
+        redirect_to @post
+      end
     else
       render 'edit'
     end
@@ -48,13 +56,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     
-    redirect_to root_path
+    redirect_to admin_path
   end
   
   private
   
   def post_params
-    params.require(:post).permit(:title, :body, :summary, :picture)
+    params.require(:post).permit(:title, :body, :summary, :picture, :vertical, :crop_x, :crop_y, :crop_w, :crop_h)
   end
   
   def is_admin?

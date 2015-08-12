@@ -1,0 +1,17 @@
+<h1>Crop Avatar</h1>
+
+<% if params[:post][:vertical] == "1" %>
+  <h2> This is a vertical image</h2>
+<% end %>
+
+<%= image_tag @post.picture.url(:large), id: "cropbox" %>
+
+<%= form_for @post do |f| %>
+  <% %w[x y w h].each do |attribute| %>
+    <%= f.text_field "crop_#{attribute}" %><br>
+  <% end %>
+  <div class="actions">
+    <%= f.submit "Crop" %>
+  </div>
+  
+<% end %>
