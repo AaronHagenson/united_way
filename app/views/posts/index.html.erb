@@ -42,85 +42,52 @@
     </div>   
 
   <%# end %> -->
-  
+ 
   <div class="section group"> <!-- first row of posts -->
-    <div class="col span_1_of_3">
-      <div class="post_tile">
-        <h2><%= link_to @post1.title, @post1 %></h2><br>
-         <% if @post1.picture? %>
-            <%=link_to image_tag(@post1.picture.url(:large)), @post1 %>
-          <% else %>
-            <%= link_to image_tag("defaultlogo2.png"), @post1 %>
-          <% end %>
-          <p><%= @post1.summary %></p>
+    <% if !@post1.nil? %>
+      <div class="col span_1_of_3">
+        <div class="post_tile">
+          <h2><%= link_to @post1.title, @post1 %></h2><br>
+           <% if @post1.picture? %>
+              <%=link_to image_tag(@post1.picture.url(:large)), @post1 %>
+            <% else %>
+              <%= link_to image_tag("defaultlogo2.png"), @post1 %>
+            <% end %>
+            <p><%= @post1.summary %></p>
+        </div>
       </div>
-    </div>
+    <% end %>
 
-  
-    <div class="col span_1_of_3">
-      <div class="post_tile">
-        <h2><%= link_to @post2.title, @post2 %></h2><br>
-         <% if @post2.picture? %>
-            <%=link_to image_tag(@post2.picture.url(:large)), @post2 %>
-          <% else %>
-            <%= link_to image_tag("defaultlogo2.png"), @post2 %>
-          <% end %>
-          <p><%= @post2.summary %></p>
+    <% if !@post2.nil? %>
+      <div class="col span_1_of_3">
+        <div class="post_tile">
+          <h2><%= link_to @post2.title, @post2 %></h2><br>
+           <% if @post2.picture? %>
+              <%=link_to image_tag(@post2.picture.url(:large)), @post2 %>
+            <% else %>
+              <%= link_to image_tag("defaultlogo2.png"), @post2 %>
+            <% end %>
+            <p><%= @post2.summary %></p>
+        </div>
       </div>
-    </div>
+    <% end %>
     
-    <div class="col span_1_of_3">
-      <div class="post_tile">
-        <h2><%= link_to @post3.title, @post3 %></h2><br>
-         <% if @post3.picture? %>
-            <%=link_to image_tag(@post3.picture.url(:large)), @post3 %>
-          <% else %>
-            <%= link_to image_tag("defaultlogo2.png"), @post3 %>
-          <% end %>
-          <p><%= @post3.summary %></p>
+    <% if !@post3.nil? %>
+      <div class="col span_1_of_3">
+        <div class="post_tile">
+          <h2><%= link_to @post3.title, @post3 %></h2><br>
+           <% if @post3.picture? %>
+              <%=link_to image_tag(@post3.picture.url(:large)), @post3 %>
+            <% else %>
+              <%= link_to image_tag("defaultlogo2.png"), @post3 %>
+            <% end %>
+            <p><%= @post3.summary %></p>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div> <!-- end of first row of posts -->
   
-  <div class="section group"> <!-- second row of posts -->
-    <div class="col span_1_of_3">
-      <div class="post_tile">
-        <h2><%= link_to @post4.title, @post4 %></h2><br>
-         <% if @post4.picture? %>
-            <%=link_to image_tag(@post4.picture.url(:large)), @post4 %>
-          <% else %>
-            <%= link_to image_tag("defaultlogo2.png"), @post4 %>
-          <% end %>
-          <p><%= @post4.summary %></p>
-      </div>
-    </div>
-
-  
-    <div class="col span_1_of_3">
-      <div class="post_tile">
-        <h2><%= link_to @post5.title, @post5 %></h2><br>
-         <% if @post5.picture? %>
-            <%=link_to image_tag(@post5.picture.url(:large)), @post5 %>
-          <% else %>
-            <%= link_to image_tag("defaultlogo2.png"), @post5 %>
-          <% end %>
-          <p><%= @post5.summary %></p>
-      </div>
-    </div>
-    
-    <div class="col span_1_of_3">
-      <div class="post_tile">
-        <h2><%= link_to @post6.title, @post6 %></h2><br>
-         <% if @post6.picture? %>
-            <%=link_to image_tag(@post6.picture.url(:large)), @post6 %>
-          <% else %>
-            <%= link_to image_tag("defaultlogo2.png"), @post6 %>
-          <% end %>
-          <p><%= @post6.summary %></p>
-      </div>
-    </div>
-  </div> <!-- end of second row of posts -->
-  
+ 
   
 
 </div> <!-- end of wrapper -->

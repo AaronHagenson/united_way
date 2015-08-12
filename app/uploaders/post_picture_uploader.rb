@@ -44,6 +44,11 @@ class PostPictureUploader < CarrierWave::Uploader::Base
       process :resize_to_fill => [640, 480]
     end
     
+    version :vertical do
+      process :crop_vertical
+      process :resize_to_fill => [480, 640]
+    end
+    
     def crop
       if model.crop_x.present?
         resize_to_limit(640, 480)
@@ -57,6 +62,21 @@ class PostPictureUploader < CarrierWave::Uploader::Base
         end
       end
     end
+    
+    def crop_vertical
+      if model.crop_x.present?
+        resize_to_limit(480, 640)
+        manipulate! do |img|
+          x = model.crop_x.to_i
+          y = model.crop_y.to_i
+          w = model.crop_w.to_i
+          h = model.crop_h.to_i
+          img.crop("#{w}x#{h}+#{x}+#{y}")
+          img
+        end
+      end
+    end
+
 
 
   # Add a white list of extensions which are allowed to be uploaded.
