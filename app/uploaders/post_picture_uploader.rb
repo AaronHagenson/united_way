@@ -5,7 +5,10 @@ class PostPictureUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
    include CarrierWave::MiniMagick
-   #process resize_to_limit: [500, 500]
+   
+  # How to make this work for vertical images???
+   process resize_to_fill: [640, 480]
+ 
    
    if Rails.env.production?
      storage :fog
@@ -41,17 +44,19 @@ class PostPictureUploader < CarrierWave::Uploader::Base
   # end
     version :large do
       process :crop
-      process :resize_to_fill => [640, 480]
+      # process :resize_to_fill => [640, 480] 
     end
     
+  
     version :vertical do
       process :crop_vertical
-      process :resize_to_fill => [480, 640]
+     # process :resize_to_fill => [480, 640]
     end
+    
     
     def crop
       if model.crop_x.present?
-        resize_to_limit(640, 480)
+        # resize_to_limit(640, 480)
         manipulate! do |img|
           x = model.crop_x.to_i
           y = model.crop_y.to_i
