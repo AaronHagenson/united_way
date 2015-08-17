@@ -1,7 +1,11 @@
 <div class="small_wrapper">
   <h1> <%= @post.title %> </h1>
   <div class="post_picture">
-    <%= image_tag @post.picture.url(:large) if @post.picture? %>
+    <% if @post.image_orientation == 0 %>
+      <%= image_tag @post.picture.url(:horiz) if @post.picture? %>
+    <% elsif @post.image_orientation == 1 %>
+      <%= image_tag @post.picture.url(:vert) if @post.picture? %>
+    <% end %>
   </div>
   <p>
     <%= @post.body.html_safe %>

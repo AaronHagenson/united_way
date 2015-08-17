@@ -7,7 +7,26 @@ class PostPictureUploader < CarrierWave::Uploader::Base
    include CarrierWave::MiniMagick
    
   # How to make this work for vertical images???
-   process resize_to_fill: [640, 480]
+   #process resize_to_fill: [640, 480]
+   #process resize_to_fill: [480, 640]
+  # process :test
+   
+    # def test
+    # if model.image_orientation == "horizontal"
+    #   resize_to_fill(640,480)
+    # elsif model.image_orientation == "vertical"
+    #   resize_to_fill(480,640)
+    # end
+    # end
+    
+    # def test
+    #   if model.crop_x.present?
+    #     puts "It's present!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    #   # if model.is_horizontal?
+    #   #   resize_to_fill(640, 480)
+    #   end
+    # end
+  
  
    
    if Rails.env.production?
@@ -44,7 +63,7 @@ class PostPictureUploader < CarrierWave::Uploader::Base
   # end
     version :large do
       process :crop
-      # process :resize_to_fill => [640, 480] 
+     # process :resize_to_fill => [640, 480] # can I change this to a square just for the final view? also remember to rollback DB and go back to checkbox.
     end
     
   
@@ -53,34 +72,45 @@ class PostPictureUploader < CarrierWave::Uploader::Base
      # process :resize_to_fill => [480, 640]
     end
     
-    
-    def crop
-      if model.crop_x.present?
-        # resize_to_limit(640, 480)
-        manipulate! do |img|
-          x = model.crop_x.to_i
-          y = model.crop_y.to_i
-          w = model.crop_w.to_i
-          h = model.crop_h.to_i
-          img.crop("#{w}x#{h}+#{x}+#{y}")
-          img
-        end
-      end
+    version :horiz do
+      process :resize_to_fill => [640, 480]
+      process :crop
     end
     
-    def crop_vertical
-      if model.crop_x.present?
-        resize_to_limit(480, 640)
-        manipulate! do |img|
-          x = model.crop_x.to_i
-          y = model.crop_y.to_i
-          w = model.crop_w.to_i
-          h = model.crop_h.to_i
-          img.crop("#{w}x#{h}+#{x}+#{y}")
-          img
-        end
+    version :vert do
+      process :resize_to_fill => [480, 640]
+      process :crop_vertical
+    end
+    
+  
+    
+  def crop
+    if model.crop_x.present?
+      resize_to_limit(640, 480)
+      manipulate! do |img|
+        x = model.crop_x.to_i
+        y = model.crop_y.to_i
+        w = model.crop_w.to_i
+        h = model.crop_h.to_i
+        img.crop("#{w}x#{h}+#{x}+#{y}")
+        img
       end
     end
+  end
+    
+  def crop_vertical
+    if model.crop_x.present?
+      resize_to_limit(480, 640)
+      manipulate! do |img|
+        x = model.crop_x.to_i
+        y = model.crop_y.to_i
+        w = model.crop_w.to_i
+        h = model.crop_h.to_i
+        img.crop("#{w}x#{h}+#{x}+#{y}")
+        img
+      end
+    end
+  end
 
 
 

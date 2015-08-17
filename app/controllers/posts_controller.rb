@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(post_params)
-    
+
     if @post.save
       if params[:post][:picture].present?
         render :crop
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     
-    if @post.update(params[:post].permit(:title, :body, :summary, :picture, :crop_x, :crop_y, :crop_w, :crop_h))
+    if @post.update(params[:post].permit(:title, :body, :summary, :picture, :image_orientation, :crop_x, :crop_y, :crop_w, :crop_h))
       if params[:post][:picture].present?
         render :crop
       else
@@ -62,7 +62,7 @@ class PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(:title, :body, :summary, :picture, :vertical, :crop_x, :crop_y, :crop_w, :crop_h)
+    params.require(:post).permit(:title, :body, :summary, :picture, :image_orientation, :crop_x, :crop_y, :crop_w, :crop_h)
   end
   
   def is_admin?

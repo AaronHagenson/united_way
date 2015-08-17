@@ -229,6 +229,23 @@ nav {
    border-left: none;
 }
 
+/* Crop Page */
+#cropbox_container {
+  background-color: $blue;
+  width: 75%;
+  margin: auto;
+}
+#cropbox {
+  text-align: center;
+}
+.horiz_cropbox{
+  width: 640 !important;
+  height: 480 !important;
+}
+.vert_cropbox {
+  width: 480;
+  height: 640;
+}
 
 
 

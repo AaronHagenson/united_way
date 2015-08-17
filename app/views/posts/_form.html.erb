@@ -20,6 +20,13 @@
       <br><br>
       
       <p>
+        <%= f.label :image_orientation, "Vertical" %>
+        <%= f.check_box :image_orientation %>
+       <%#= f.label :image_orientation %>
+       <%#= f.text_field :image_orientation %> 
+      </p>
+      
+      <p>
         <%= f.label :summary %>
         <%= f.text_area :summary %>
       </p>
@@ -33,12 +40,10 @@
       <p>
         <%= f.submit %>
       </p>
+      
       <%= f.file_field :picture %>
       
-      <p>
-      <%= f.label 'Vertical image' %>
-      <%= f.check_box :vertical %>
-      </p>
+
     <% end %>
     
   </div>

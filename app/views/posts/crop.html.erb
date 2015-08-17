@@ -1,18 +1,23 @@
-<h1>Crop Image</h1>
 
-<% if params[:post][:vertical] == "1" %>
-  <%= image_tag @post.picture.url(:vertical), id: "cropbox" %>
-<% else %>
-  <%= image_tag @post.picture.url(:large), id: "cropbox" %>
-<% end %>
+<div class="small_wrapper">
+  <h1>Crop Image</h1>
 
-<%= form_for @post do |f| %>
-  <% %w[x y w h].each do |attribute| %>
-    <%= f.text_field "crop_#{attribute}" %><br>
-  <% end %>
-  <div class="actions">
-    <%= f.submit "Crop" %>
+  <div id="cropbox_container">
+    <% if params[:post][:image_orientation] == "0" %>
+      <%= image_tag @post.picture.url(:horiz), id: "cropbox" %>
+    <% elsif params[:post][:image_orientation] == "1" %>
+      <%= image_tag @post.picture.url(:vert), id: "cropbox" %>
+    <% end %>
   </div>
   
-<% end %>
+  <%= form_for @post do |f| %>
+    <% %w[x y w h].each do |attribute| %>
+      <%= f.hidden_field "crop_#{attribute}" %><br>
+    <% end %>
+    <div class="actions">
+      <%= f.submit "Crop" %>
+    </div>
+    
+  <% end %>
+</div>
 

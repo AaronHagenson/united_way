@@ -48,10 +48,10 @@
       <div class="col span_1_of_3">
         <div class="post_tile">
           <h2><%= link_to @post1.title, @post1 %></h2><br>
-           <% if @post1.picture? %>
-              <%=link_to image_tag(@post1.picture.url(:large)), @post1 %>
-            <% else %>
-              <%= link_to image_tag("defaultlogo2.png"), @post1 %>
+            <% if @post1.image_orientation == 0 %>
+              <%= link_to(image_tag( @post1.picture.url(:horiz)), @post1) if @post1.picture? %>
+            <% elsif @post1.image_orientation == 1 %>
+              <%= link_to(image_tag( @post1.picture.url(:vert)), @post1) if @post1.picture? %>
             <% end %>
             <p><%= @post1.summary %></p>
         </div>
@@ -62,10 +62,10 @@
       <div class="col span_1_of_3">
         <div class="post_tile">
           <h2><%= link_to @post2.title, @post2 %></h2><br>
-           <% if @post2.picture? %>
-              <%=link_to image_tag(@post2.picture.url(:large)), @post2 %>
-            <% else %>
-              <%= link_to image_tag("defaultlogo2.png"), @post2 %>
+           <% if @post2.image_orientation == 0 %>
+              <%= link_to(image_tag(@post2.picture.url(:horiz)), @post2) if @post2.picture? %>
+            <% elsif @post2.image_orientation == 1 %>
+              <%= link_to(image_tag(@post2.picture.url(:vert)), @post2) if @post2.picture? %>
             <% end %>
             <p><%= @post2.summary %></p>
         </div>
@@ -76,12 +76,12 @@
       <div class="col span_1_of_3">
         <div class="post_tile">
           <h2><%= link_to @post3.title, @post3 %></h2><br>
-           <% if @post3.picture? %>
-              <%=link_to image_tag(@post3.picture.url(:large)), @post3 %>
-            <% else %>
-              <%= link_to image_tag("defaultlogo2.png"), @post3 %>
-            <% end %>
-            <p><%= @post3.summary %></p>
+            <% if @post3.image_orientation == 0 %>
+              <%= link_to(image_tag(@post3.picture.url(:horiz)), @post3) if @post3.picture? %>
+            <% elsif @post1.image_orientation == 1 %>
+              <%= link_to(image_tag(@post3.picture.url(:vert)), @post3) if @post3.picture? %>
+            <% end %>            
+          <p><%= @post3.summary %></p>
         </div>
       </div>
     <% end %>
