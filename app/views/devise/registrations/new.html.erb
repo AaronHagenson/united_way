@@ -22,6 +22,10 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
   
+  <div class="field">
+    <%= f.label :picture, "Upload an Avatar" %>
+    <%= f.file_field :picture %>
+  </div>
 
 
   <div class="actions">

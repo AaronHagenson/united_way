@@ -28,7 +28,7 @@
   </div>
   
   <% if current_user.picture.url.present? %>
-    <%= image_tag(current_user.picture.url) %>
+    <%= image_tag(current_user.picture.url(:large)) %>
   <% end %>
   
   <div class="field">
