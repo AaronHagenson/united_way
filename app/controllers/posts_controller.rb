@@ -10,6 +10,8 @@ class PostsController < ApplicationController
      @post4 = @posts[3]
      @post5 = @posts[4]
      @post6 = @posts[5]
+     
+     render layout: "index_layout"
   end
   
   def new

@@ -77,7 +77,7 @@
               <li><%= link_to "Apply For a Grant", root_path %></li>
               <li><%= link_to "Partner Agencies", root_path %></li>
               <li><%= link_to "Forum", forum_threads_path %></li>
-              <!--<li><#%= link_to "Contact", root_path %></li>-->
+              <!--<li><%#= link_to "Contact", root_path %></li>-->
               <li><%= link_to "Donate", root_path, id: "mobile_donate_button" %></li>
               <li><%= link_to "Volunteer", root_path, id: "mobile_volunteer_button" %></li>
               <% if user_is_admin? %>
@@ -95,38 +95,10 @@
       <%= content_tag(:div, msg, class: "alert") %>
     <% end %>
     
-  <div class="sidebar">
-    <div class="sidebar_box">
-      <div id="quicklinks">Quick Links</div>
-      <ul>
-        <li><%= link_to "What We Do", root_path %></li>
-        <li><%= link_to "Education", root_path %></li>
-        <li><%= link_to "Leadership Society", root_path %></li>
-        <li><%= link_to "Our Stories", root_path %></li>
-        <li><%= link_to "Our Impact", root_path %></li>
-      </ul>
-    </div>
-    
-    <div class="contact_box">
-      <div id="contactbox_title">Contact</div>
-       <p>Email:<br> <%=mail_to("connect@northfieldunitedway.org") %><br><br>
-        Elizabeth Child, Exec Director<br>
-        Kathy Thacher, Associate Director<br><br>
-        1651 Jefferson Parkway<br>
-        Northfield, MN 55057<br>
-        (507) 664-3510<br></p>
-    </div>
-  </div> <!-- end of sidebar -->
-
-  <div class="main_content">
 
       <%= yield %>
       
-  </div> <!-- end of main_content -->
-  
-  <footer class="clear_it">
-    <%= debug(params) if Rails.env.development? %>
-  </footer>  
-  
+      <%= debug(params) if Rails.env.development? %>
+      
   </body>
 </html>
