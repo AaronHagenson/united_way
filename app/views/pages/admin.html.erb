@@ -1,20 +1,27 @@
-<h1>Admin Page</h1>
-<%= link_to "New Post", new_post_path %>
-
-<% @posts.each do |post| %>
-    <div class="section group">
-
-     <div class="col span_1_of_3">
-       <h2><%= link_to post.title, post %></h2><br>
-       <p><%= post.created_at.strftime("%B, %d, %Y") %></p><br>
-       <p><%= post.summary %></p>
-       <p>
-          <%= link_to 'View', post %>
-          <%= link_to 'Edit', edit_post_path(post) %>
-          <%= link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure" } %>
-          
-       </p>
-     </div>
-       </div>   
-
-<% end %>
+<div class="small_wrapper">
+  <h1>Admin</h1>
+  <%= link_to "New Post", new_post_path, id: "new_post_button" %>
+ 
+  <div id="posts_list"> 
+    <% @posts.each do |post| %>
+      <div class="post">
+        <% if post.image_orientation == 0 %>
+          <%= image_tag post.picture.url(:horiz) if post.picture? %>
+        <% elsif post.image_orientation == 1 %>
+          <%= image_tag post.picture.url(:vert) if post.picture? %>
+        <% end %>
+        <p>Title: &nbsp &nbsp <%= link_to post.title, post %></p><br>
+        <p>Summary: &nbsp &nbsp <%= post.summary %></p><br>
+        <p>Posted On: &nbsp &nbsp <%= post.created_at.strftime("%B, %d, %Y") %></p><br>
+        
+        <p>
+          <%= link_to 'View', post, class: "post_buttons" %>
+          <%= link_to 'Edit', edit_post_path(post), class: "post_buttons" %>
+          <%= link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure" }, class: "post_buttons delete_button" %>
+        </p>
+        <div class="clear_it"></div>
+      </div>
+    <% end %>
+    
+  </div>  
+</div>
