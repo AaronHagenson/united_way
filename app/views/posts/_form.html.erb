@@ -1,52 +1,60 @@
-<div class="form_wrapper">
-  <div class="wrapper">
-    <%= form_for(@post, html: { multipart: true }) do |f| %>
-      <% if @post.errors.any? %>
-        <div id="errors">
-          <h2><%= pluralize(@post.errors.count, "error") %> prevented this
-          post from saving</h2>
-          <ul>
-            <% @post.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-  
-      <p>
-        <%= f.label :title %> 
-        <%= f.text_field :title %>
-      </p>
-      <br><br>
-      
-      <p>
-        <%= f.label :image_orientation, "Vertical" %>
-        <%= f.check_box :image_orientation %>
-       <%#= f.label :image_orientation %>
-       <%#= f.text_field :image_orientation %> 
-      </p>
-      
-      <p>
-        <%= f.label :summary %>
-        <%= f.text_area :summary %>
-      </p>
-      
-      <p>
-        <%= f.label :body %>
-        <%= f.text_area :body, :class => "tinymce", :rows => 40 %>
-        <%= tinymce %>
-      </p>
-      
-      <p>
-        <%= f.submit %>
-      </p>
-      
-      <%= f.file_field :picture %>
-      
 
-    <% end %>
+
+<%= form_for(@post, html: { multipart: true }) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="errors">
+      <h2><%= pluralize(@post.errors.count, "error") %> prevented this
+      post from saving</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="post_form">
+    <p>
+      <%= f.label :title %> <br><br>
+      <%= f.text_field :title, class: "textbox-2" %>
+    </p>
+    <br><br>
+    
+    
+    <p>
+      <%= f.label :summary %><br><br>
+      <%= f.text_area :summary, class: "textarea" %>
+    </p>
+    
+    <p>
+      <%= f.label :body %><br><br>
+      <%= f.text_area :body, :class => "tinymce", :rows => 40 %>
+      <%= tinymce %>
+    </p>
+    
+
+    
+    
+    <div class="image_upload"><h4>Upload an image for this post</h4>
+      <%= f.file_field :picture %>
+    </div>
+    
+    
+
+    <div class="image_orientation">
+      <p>
+        <%= f.check_box :image_orientation %>
+        <%= f.label :image_orientation, "This is a vertical image", id: "checkbox_text" %>
+      </p>
+    </div>
+    <div class="clear_it"></div>
+    <p>
+      <%= f.submit :class => "new_post_btn" %>
+    </p>
+
+  <% end %>
     
   </div>
-</div>
+
 
 
