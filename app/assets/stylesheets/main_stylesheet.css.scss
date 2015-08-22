@@ -349,6 +349,79 @@ nav {
     }
   }
 }
+
+
+.edit_profile_form {
+  width: 60%;
+  background-color: $lightblue;
+  margin: auto;
+  font-size: 1.25em;
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid black;
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+  .field {
+    padding: 10px;
+  }
+  a {
+    font-size: 13pt;
+    margin: 0px 0px 0px 10px;
+    text-decoration: none;
+    color: $blue;
+    &:hover{
+      color: rgb(6, 72, 138);
+    }
+  }
+  h2 {
+    text-align: center;
+    padding: 10px 0px 20px 0px;
+    }
+  img {
+    width: 25%;
+    display: block;
+    margin: auto;
+  }
+}
+
+#update_image {
+  display: block;
+  width: 150px;
+  margin: auto;
+}
+
+#update_btn {
+  float: left;
+}
+
+#cancel_btn {
+  float: left;
+  background-color: $red;
+  &:hover {
+    background-color: darkred;
+  }
+}
+
+#update_btn_group {
+  width: 350px;
+  display: block;
+  margin: auto;
+}
+
+#password_reset_form {
+  #reset_btn {
+    margin-left: 10px;
+    background-color: $blue;
+    color: white;
+    font-size: 13pt;
+    padding: 5px;
+    &:hover {
+      background-color: rgb(6, 72, 138);
+    }
+    
+  }
+  
+}
+
 .textbox {
   height: 25px;
   width: 85%;
@@ -459,7 +532,7 @@ nav {
   .delete_button {
      background-color: $red;
      &:hover {
-       background-color: #ffb2b2;
+       background-color: darkred;
      }
    }
 
