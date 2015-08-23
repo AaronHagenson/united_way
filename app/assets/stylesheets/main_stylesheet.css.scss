@@ -6,6 +6,8 @@ $blue: rgb(16,22,127);
 $lightblue: rgb(124, 129, 184);
 $red: rgb(254, 35, 10);
 $gold: rgb(255, 150, 0);
+$bluegreen: rgb(6, 72, 138);
+$bluegray: #DAE2ED;
 
 /* universal */
  
@@ -391,6 +393,7 @@ nav {
 
 #update_btn {
   float: left;
+  // margin-left: 20%;
 }
 
 #cancel_btn {
@@ -399,12 +402,6 @@ nav {
   &:hover {
     background-color: darkred;
   }
-}
-
-#update_btn_group {
-  width: 350px;
-  display: block;
-  margin: auto;
 }
 
 #password_reset_form {
@@ -417,9 +414,7 @@ nav {
     &:hover {
       background-color: rgb(6, 72, 138);
     }
-    
   }
-  
 }
 
 .textbox {
@@ -604,7 +599,48 @@ nav {
   }
 }
 
-
+/* Forum */
+.forum_thread {
+  margin-bottom: 30px;
+  background-color: $bluegray;
+  padding: 10px 20px 20px 20px;
+  border: 1px solid gray;
+  border-radius: 20px 20px 20px 20px;
+  h3 {
+    float: right;
+    font-size: 1.5em;
+    // margin-left: 30%;
+  }
+  p {
+    padding-left: 0px;
+    margin-top: 10px;
+  }
+  a:link, a:visited {
+    color: $blue;
+    font-size: 1.5em;
+    &:hover {
+      color: $lightblue;
+    }
+  }
+}
+.thread_info {
+  float: left;
+}
+.new_thread_btn {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: white;
+    background-color: $blue;
+    font-family: Arial;
+    padding: 5px 15px 5px 15px;
+    font-size: 1.5em;
+    margin-bottom: 50px;
+    &:hover {
+      background-color: $lightblue;
+    }
+}
 
 
 

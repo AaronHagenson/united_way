@@ -1,7 +1,18 @@
-<h1>Welcome to the Forum Page</h1>
+<div class="small_wrapper">
+  <h1>Community Forum</h1>
+  
+  <%= link_to "New Thread", new_forum_thread_path, class: "new_thread_btn" %><br><br>
 
-<% @threads.each do |thread| %>
-  <h2><%= link_to thread.title, thread %></h2>
-  <p>Published at <%= thread.created_at %> by <%= thread.user.email %></p>
-<% end %>
-<%= link_to "New Thread", new_forum_thread_path %>
+  <% @threads.each do |thread| %>
+    <div class="forum_thread">
+      <h2><%= link_to thread.title, thread %></h2>
+      <div class="thread_info">
+        <p>Thread started by <%= thread.user.email %></p>
+        <p>Published at <%= thread.created_at.strftime("%l:%M %P %Z on %B, %d, %Y") %> </p>
+      </div>
+      <h3> <%= pluralize( thread.forum_comments.count, "Reply") %> </h3>
+      <div class="clear_it"></div>
+    </div>
+    <hr>
+  <% end %>
+</div>
