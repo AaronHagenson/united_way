@@ -8,6 +8,7 @@ $red: rgb(254, 35, 10);
 $gold: rgb(255, 150, 0);
 $bluegreen: rgb(6, 72, 138);
 $bluegray: #DAE2ED;
+$darkblue: #00005c;
 
 /* universal */
  
@@ -492,7 +493,7 @@ nav {
   margin-bottom: 50px;
   text-align: center;
   &:hover {
-    background-color: $lightblue;
+    background-color: $darkblue;
   }
   
 }
@@ -521,7 +522,7 @@ nav {
     margin-right: 15px;
     margin-top: 65px;
     &:hover {
-      background-color: $lightblue;
+      background-color: $darkblue;
     }
    }
   .delete_button {
@@ -544,7 +545,7 @@ nav {
 
 /* Post Form */
 .post_form {
-  background-color: lightgray;
+  background-color: $bluegray;
   padding-top: 20px;
   border: 2px solid gray;
   border-radius: 20px 20px 20px 20px;
@@ -578,7 +579,7 @@ nav {
     margin-top: 10px;
     margin-bottom: 15px;
     &:hover {
-      background: $lightblue;
+      background: $darkblue;
       cursor: pointer;
       text-decoration: none;
     }
@@ -619,7 +620,7 @@ nav {
     color: $blue;
     font-size: 1.5em;
     &:hover {
-      color: $lightblue;
+      color: $darkblue;
     }
   }
 }
@@ -638,8 +639,61 @@ nav {
     font-size: 1.5em;
     margin-bottom: 50px;
     &:hover {
-      background-color: $lightblue;
+      background-color: $darkblue;
     }
+}
+
+.new_thread {
+  background-color: $lightblue;
+  border: 1px solid black;
+  border-radius: 20px 20px 20px 20px;
+  padding: 10px;
+  label {
+  font-size: 2em;
+  color: $blue;
+  }
+  textarea {
+    width: 85%;
+    height: 400px;
+  }
+
+  
+}
+.create_thread_btn {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: white;
+    background-color: $blue;
+    font-family: Arial;
+    padding: 5px 15px 5px 15px;
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-right: 120px;
+    float: right;
+    cursor: pointer;
+    &:hover {
+      background-color: $darkblue;
+    }
+}
+.thread_back_btn {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: white;
+    background-color: $gold;
+    font-family: Arial;
+    padding: 10px 15px 10px 10px;
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-left: 100px;
+    float: left;
+    &:hover {
+      background-color: #cca300;
+    }
+
 }
 
 

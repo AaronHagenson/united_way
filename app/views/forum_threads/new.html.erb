@@ -1,30 +1,36 @@
-<h1>New Forum Thread</h1>
-<%= form_for @thread do |f| %>
-  <% if @thread.errors.any? %>
-    <div id="errors">
-      <h2><%= pluralize(@thread.errors.count, "error") %> prevented this
-      post from saving</h2>
-      <ul>
-        <% @thread.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  
-  
-  <% end %>
-  <p>
-    <%= f.label :title %> 
-    <%= f.text_field :title %>
-  </p>
-  
-  <p>
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </p>
-  
-  <p>
-    <%= f.submit "Create Thread" %>
-  </p>
-  
-<% end %>
+<div class="small_wrapper">
+  <h1>New Forum Thread</h1>
+  <%= form_for @thread do |f| %>
+    <% if @thread.errors.any? %>
+      <div id="errors">
+        <h2><%= pluralize(@thread.errors.count, "error") %> prevented this
+        post from saving</h2>
+        <ul>
+          <% @thread.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    
+    
+    <% end %>
+    <div class="new_thread">
+      <p>
+        <%= f.label :title %> <br>
+        <%= f.text_field :title, class: "textbox" %>
+      </p>
+      
+      <p>
+        <%= f.label :content %><br>
+        <%= f.text_area :content %>
+      </p>
+      
+      <%= link_to "< Back", @thread, class: "thread_back_btn" %>
+      <p>
+        <%= f.submit "Create Thread", class: "create_thread_btn" %>
+      </p>
+      <div class="clear_it"></div>
+      
+    <% end %>
+  </div>
+</div>
