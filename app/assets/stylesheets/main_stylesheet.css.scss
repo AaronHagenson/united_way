@@ -718,15 +718,73 @@ nav {
     text-align: center;
     padding: 5px;
     border: 1px solid $darkblue;
+    border-radius: 20px 20px 20px 20px;
     margin-right: 10px;
+    font-size: 10pt;
   }
   img {
     height: 100px;
+  }
+  textarea {
+    width: 85%;
+    height: 200px;
+    font-size: 14pt;
+    margin-top: 10px;
   }
 }
 .comments {
   margin-left: 200px;
 }
+.reply_box {
+  margin-left: -100px;
+}
+.create_comment_btn {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: white;
+    background-color: $blue;
+    font-family: Arial;
+    padding: 5px 15px 5px 15px;
+    font-size: 1.25em;
+    cursor: pointer;
+    &:hover {
+      background-color: $darkblue;
+    }
+}
+.edit_thread_btn {
+    color: white;
+    background-color: $blue;
+    font-family: Arial;
+    padding: 5px 15px 5px 15px;
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-left: 100px;
+    cursor: pointer;
+    &:hover {
+      background-color: $darkblue;
+    }
+}
+#cancel_link {
+  float: right;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: white;
+    background-color: $gold;
+    font-family: Arial;
+    padding: 10px 15px 10px 10px;
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-right: 140px;
+    &:hover {
+      background-color: #cca300;
+    }
+
+}
+
 
 
 

@@ -24,8 +24,10 @@
       <br>
       <%= render @thread.forum_comments %>
       
-      <p>Reply to Thread</p>
-      <%= render 'forum_comments/form' %>
+      <div class="reply_box">
+        <p>Reply to Thread</p>
+        <%= render 'forum_comments/form' %>
+      </div>
     </div>
   </div>
 </div>

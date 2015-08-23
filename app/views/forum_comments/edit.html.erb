@@ -1,13 +1,20 @@
-<h1>Edit Reply</h1>
-<%= form_for ([@thread, @comment]) do |f| %>
+<div class="small_wrapper">
 
-  <p>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </p>
+  <h1>Edit Comment</h1>
+  <%= form_for ([@thread, @comment]) do |f| %>
   
-  <p>
-    <%= f.submit "Edit Comment" %>
-  </p>
-  
-<% end %>
+  <div class="new_thread">
+    <p>
+      <%= f.text_area :body %>
+    </p>
+    
+    
+      <%= f.submit "Edit Comment", class: "edit_thread_btn" %>
+      <%= link_to "Cancel", @thread, id: "cancel_link" %>
+
+    
+    
+  <% end %>
+
+  </div>
+</div>

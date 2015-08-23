@@ -1,5 +1,10 @@
   <div class="user_data">
-    <%= image_tag forum_comment.user.picture.url(:large) %>
+    <% if forum_comment.user.picture? %>
+      <%= image_tag forum_comment.user.picture.url(:large) %>
+    <% else %>
+      <%= image_tag("default_forum_pic.png") %>
+    <% end %>
+    
     <div class="clear_it"></div>
     <%= forum_comment.user.email %><br>
     <%= forum_comment.created_at.strftime("%l:%M %P %Z on %B, %d, %Y") %><br>
@@ -10,9 +15,10 @@
   
   <% if !current_user.nil? && (current_user.id == forum_comment.user_id || current_user.admin?) %>
     
-    <%= link_to "Edit", edit_forum_thread_forum_comment_path(forum_comment.forum_thread, forum_comment) %> 
     <%= link_to "Delete", [forum_comment.forum_thread, forum_comment], method: :delete,
                               data: { confirm: "Are you sure?" } %>
+    <%= link_to "Edit", edit_forum_thread_forum_comment_path(forum_comment.forum_thread, forum_comment) %> 
+
                               
   <% end %>
      <div class="clear_it"></div>
