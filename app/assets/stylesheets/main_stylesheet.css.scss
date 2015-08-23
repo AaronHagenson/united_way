@@ -693,10 +693,40 @@ nav {
     &:hover {
       background-color: #cca300;
     }
-
 }
 
-
+/* Thread Comments */
+.forum_comments {
+  p {
+    font-size: 1.25em;
+  }
+  h2 {
+    // margin-left: 100px;
+  }
+  a:link, a:visited {
+    color: $blue;
+    text-decoration: none;
+    float: right;
+    padding: 5px 0px 5px 10px;
+    &:hover {
+      color: $lightblue;
+    }
+  }
+  .user_data {
+    float:left;
+    background-color: $bluegray;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid $darkblue;
+    margin-right: 10px;
+  }
+  img {
+    height: 100px;
+  }
+}
+.comments {
+  margin-left: 200px;
+}
 
 
 

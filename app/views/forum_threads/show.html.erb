@@ -1,15 +1,31 @@
-<h1><%= @thread.title %></h1>
-<p><%= @thread.content %></p>
+<div class="small_wrapper">
+  <div class="forum_comments">
+    <h1><%= @thread.title %></h1>
 
-<% if !current_user.nil? && (current_user.id == @thread.user_id || current_user.admin?) %>
-  <%= link_to "Edit", edit_forum_thread_path %>
-  <%= link_to "Delete", @thread, method: :delete, data: {confirm: "Are you sure?" } %>
-<% end %>
+    <div class="user_data">
+      <%= image_tag @thread.user.picture.url(:large) %>
+      <div class="clear_it"></div>
+      <%= @thread.user.email %><br>
+      <%= @thread.created_at.strftime("%l:%M %P %Z on %B, %d, %Y") %><br>
+    </div>
+    
+    <p><%= @thread.content %></p>
+    <% if !current_user.nil? && (current_user.id == @thread.user_id || current_user.admin?) %>
+      <%= link_to "Delete", @thread, method: :delete, data: {confirm: "Are you sure?" } %>
+      <%= link_to "Edit", edit_forum_thread_path %>
+    <% end %>
 
-<br><br>
-
-<h2><%= @thread.forum_comments.count %> Comments</h2>
-<%= render @thread.forum_comments %>
-
-<p>Reply to Thread</p>
-<%= render 'forum_comments/form' %>
+    <div class="clear_it"></div>
+    
+    <hr>
+    <br>
+    <div class="comments">
+      <h2><%= @thread.forum_comments.count %> Comments</h2>
+      <br>
+      <%= render @thread.forum_comments %>
+      
+      <p>Reply to Thread</p>
+      <%= render 'forum_comments/form' %>
+    </div>
+  </div>
+</div>
