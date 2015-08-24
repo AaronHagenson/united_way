@@ -8,41 +8,9 @@
         <h3>Recent Articles</h3>
       </div>
     </div>
+  </div>
     
-    <!--<div class="col span_1_of_3">-->
-    <!--  <div class="sub_heading">-->
-    <!--    <h3>Features</h3>-->
-    <!--  </div>-->
-    <!--</div>-->
-    
-    <!--<div class="col span_1_of_3">-->
-    <!--  <div class="sub_heading">-->
-    <!--    <h3>Calendar</h3>-->
-    <!--  </div>-->
-    <!--</div>-->
-  <!--</div> -->
 
-
-
-
-
-  <%# @posts.each do |post| %>
-    <!--<div class="section group">-->
-    <!--  <div class="col span_1_of_3">-->
-        <!--<div class="post_tile">-->
-          <!--<h2><%#= link_to post.title, post %></h2><br>
-          <%# if post.picture? %>
-            <%#=link_to image_tag(post.picture.url), post %>
-          <%# else %>
-            <%#= link_to image_tag("defaultlogo.png"), post %>
-          <%# end %>
-          <p><%#= post.summary %></p>
-        </div>
-      </div>
-    </div>   
-
-  <%# end %> -->
- 
   <div class="section group"> <!-- first row of posts -->
     <% if !@post1.nil? %>
       <div class="col span_1_of_3">
@@ -91,8 +59,56 @@
       </div>
     <% end %>
   </div> <!-- end of first row of posts -->
+  <hr> 
+
+  <div class="section group blurb"><!-- second row -->
+    <p><span>The Northfield Area United Way</span> helps one-in-three residents in our community lead fulfilling lives.<br> 
+    For more than 40 years we have fostered a caring community with both nationally
+    recognized programs and services that have untold impact.</p>
+  </div>
   
+  <hr>
+
+  <div class="section group"> <!-- quick links -->
+    <div class="col span_1_of_3">
+      <div class="sub_heading">
+        <h3>Quick Links</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="section group row_2_row"> <!-- third row -->
+    <div class="col span_1_of_2 row_2_col1">
+      <p class="headings">Leadership</p>
+      <%= image_tag("hospital.png") %>
+      <%= link_to "Read More >>", '#', id: "read_more" %>
+    </div>
  
+    <div class="col span_1_of_2 row_2_col2">
+      <p class="headings">Education</p>
+      <%= image_tag("readhead.png") %>
+      <%= link_to "Read More >>", '#', id: "read_more" %>
+
+    </div>
+  </div> <!-- end of third row -->
   
 
-</div> <!-- end of wrapper -->
+  <div class="section group row_3_row"> <!-- fourth row -->
+    <div class="col span_1_of_2 row_2_col1">
+      <p class="headings">Community</p>
+      <%= image_tag("soccer.png") %>
+      <%= link_to "Read More >>", '#', id: "read_more" %>
+
+    </div>
+ 
+    <div class="col span_1_of_2 row_2_col2">
+      <p class="headings">Senior Programs</p>
+      <%= image_tag("pingpong.png") %>
+      <%= link_to "Read More >>", '#', id: "read_more" %>
+    </div>
+  </div> <!-- end of fourth row -->
+</div><!-- end of large wrapper -->
+
+  
+
+

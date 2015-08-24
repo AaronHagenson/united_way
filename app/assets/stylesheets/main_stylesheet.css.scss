@@ -72,6 +72,7 @@ h3 {
   height: 100%;
   width: 25%;
   margin-top: 135px;
+  margin-bottom: 100px;
   .sidebar_box {
     background-color: #DAE2ED;
     color: $blue;
@@ -130,7 +131,21 @@ h3 {
     }
   }
 }
+footer {
+  background-color: $blue;
+  color: white;
+  padding: 20px;
+  border-top: 2px solid black;
+  p {
+    float: right;
+  }
+  aside {
+    float:left;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 
+}
 
 
 /* index page */
@@ -181,6 +196,63 @@ h3 {
         width: 100%;
     }
 }
+
+
+.row_2_col1 {
+  // background-color: $gold;
+  text-align: center;
+  img {
+    width: 100%;
+  }
+}
+.row_2_col2 {
+  // background-color: $red;
+  text-align: center;
+  img {
+    width: 100%;
+  }
+}
+.headings {
+  background-color: $blue;
+  padding: 10px;
+  font-size: 2em;
+  color: white;
+  width: 50%;
+  position: relative;
+  top: 52px;
+  z-index: 1000;
+
+  float: left;
+}
+#read_more {
+    text-align: center; 
+    font-size: 1em;
+    background-color: rgba(254, 35, 10,.6);
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    padding: 10px 5px 10px 5px;
+    position: relative;
+    bottom: 37px;
+    z-index: 1000;
+    width: 25%;
+    float: right;
+    &:hover {
+      color: black;
+    }
+}
+
+.blurb {
+  font-size: 1.75em;
+  color: $blue;
+  text-align: center;
+  padding: 20px;
+  line-height: 70px;
+  span {
+    color: $gold;
+  }
+}
+
 
 
 
