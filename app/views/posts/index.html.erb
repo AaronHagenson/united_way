@@ -22,7 +22,6 @@
               <%= link_to(image_tag( @post1.picture.url(:vert)), @post1) if @post1.picture? %>
             <% end %>
             <h3><%= link_to "Read More >>", @post1 %></h3>
-            <!--<p><%#= @post1.summary %></p>-->
         </div>
       </div>
     <% end %>
@@ -38,7 +37,6 @@
             <% end %>
             <h3><%= link_to "Read More >>", @post2 %></h3>
 
-            <!--<p><#%= @post2.summary %></p>-->
         </div>
       </div>
     <% end %>
@@ -49,12 +47,11 @@
           <h2><%= link_to @post3.title, @post3 %></h2><br>
             <% if @post3.image_orientation == 0 %>
               <%= link_to(image_tag(@post3.picture.url(:horiz)), @post3) if @post3.picture? %>
-            <% elsif @post1.image_orientation == 1 %>
+            <% elsif @post3.image_orientation == 1 %>
               <%= link_to(image_tag(@post3.picture.url(:vert)), @post3) if @post3.picture? %>
             <% end %> 
             <h3><%= link_to "Read More >>", @post3 %></h3>
 
-          <!--<p><#%= @post3.summary %></p>-->
         </div>
       </div>
     <% end %>
