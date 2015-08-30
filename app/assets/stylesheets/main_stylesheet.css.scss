@@ -67,6 +67,38 @@ h3 {
   }
 }
 
+.alert {
+  background-color: $lightblue;
+  width: 55%;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: 2px solid $blue;
+  border-radius: 10px;
+}
+
+#error_explanation {
+  text-align: center;
+  color: $red;
+  padding: 8px;
+  background-color: $bluegray;
+  ul {
+    list-style-type: none;
+  }
+}
+
+#errors {
+  text-align: center;
+  color: $red;
+  padding: 8px;
+  ul {
+    list-style-type: none;
+  }
+}
+
+
 .sidebar {
   float: right;
   height: 100%;
