@@ -291,10 +291,12 @@ footer {
 /* show page */
 .post_picture {
   text-align: center;
+  margin-bottom: 60px;
 }
 
 .posted_on {
   margin-top: 20px;
+  margin-bottom: 50px;
   float: right;
 }
 
@@ -450,8 +452,20 @@ nav {
   width: 75%;
   margin: auto;
 }
-#cropbox {
-  text-align: center;
+
+
+#crop_btn {
+  font-size: 14pt;
+  background-color: $blue;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  width: 150px;
+  display: block;
+  margin: auto;
+  &:hover {
+    background-color: $bluegreen;
+  }
 }
 
 

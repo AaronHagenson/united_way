@@ -2,9 +2,9 @@
 <div class="small_wrapper">
   <h1>Crop Image</h1>
 
-  <div id="cropbox_container">
+  <div >
     <% if params[:post][:image_orientation] == "0" %>
-      <%= image_tag @post.picture.url(:horiz), id: "cropbox" %>
+      <%= image_tag @post.picture.url(:horiz), id: "cropbox", class: "horiz_image" %>
     <% elsif params[:post][:image_orientation] == "1" %>
       <%= image_tag @post.picture.url(:vert), id: "cropbox" %>
     <% end %>
@@ -15,7 +15,7 @@
       <%= f.hidden_field "crop_#{attribute}" %><br>
     <% end %>
     <div class="actions">
-      <%= f.submit "Crop" %>
+      <%= f.submit "Crop", id: "crop_btn" %>
     </div>
     
   <% end %>
